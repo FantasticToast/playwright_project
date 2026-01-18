@@ -1,0 +1,13 @@
+Go to https://demo.guru99.com/test/newtours/reservation.php
+Make order to any destination
+define in type “One Way”
+to complete the test in calculate by send assert for the text result
+
+go to https://advantageonlineshopping.com/#/
+click on contact US
+define all parameters
+click on Send
+
+go to https://www.zara.com/il/en/
+make sure the shopping bag test is as displayed by string
+make sure the shopping bag contains 0 by checking it is less than 1

@@ -1,0 +1,31 @@
+class TestGuru99:
+
+    def test_one_way_destination_order(self,setup_playwright):
+        print ("into test_one_way_destination_order")
+        page = setup_playwright
+        page.goto("https://demo.guru99.com/test/newtours/reservation.php")
+        radio_tripType_list = page.query_selector_all("[name='tripType']")
+        radio_tripType_list[1].click()
+        dropdown_passengers = page.locator("[name='passCount']")
+        dropdown_passengers.select_option("2")
+        dropdown_departing_from = page.locator("[name='fromPort']")
+        dropdown_departing_from.select_option(index = 2)
+        dropdown_departing_month = page.locator("[name='fromMonth']")
+        dropdown_departing_month.select_option(index = 0)
+        dropdown_departing_day = page.locator("[name='fromDay']")
+        dropdown_departing_day.select_option("5")
+        dropdown_arriving_in = page.locator("[name='toPort']")
+        dropdown_arriving_in.select_option("Paris")
+        dropdown_arriving_month = page.locator("[name='toMonth']")
+        dropdown_arriving_month.select_option("August")
+        dropdown_arriving_day = page.locator("[name='toDay']")
+        dropdown_arriving_day.select_option("11")
+        radio_service_class_list = page.query_selector_all("[name='servClass']")
+        radio_service_class_list[2].click()
+        dropdown_airline_preference = page.locator("[name='airline']")
+        dropdown_airline_preference.select_option(index = 1)
+        continue_button = page.locator("[name='findFlights']")
+        continue_button.click()
+        current_page = page.url
+        assert(current_page == "https://demo.guru99.com/test/newtours/reservation2.php")
+        print("End")
